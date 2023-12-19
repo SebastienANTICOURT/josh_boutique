@@ -14,9 +14,9 @@ import {
 } from "./ui/sheet";
 
 function Cart() {
-  const itemCount = 1;
+  const itemCount = 0;
 
-  const fee = 1;
+  const fee = 0;
   return (
     <Sheet>
       <SheetTrigger className="group -m-2 flex items-center p-2">
@@ -75,6 +75,19 @@ function Cart() {
                 alt="empty shopping cart hippo"
               />
             </div>
+            <div className="text-xl font-semibold">Your cart is empty</div>
+            <SheetTrigger asChild>
+              <Link
+                href="/products"
+                className={buttonVariants({
+                  variant: "link",
+                  size: "sm",
+                  className: "text-sm text-muted-foreground",
+                })}
+              >
+                Add items to your cart to checkout
+              </Link>
+            </SheetTrigger>
           </div>
         )}
       </SheetContent>
